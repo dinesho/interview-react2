@@ -3,6 +3,7 @@ import React, {useState, createContext} from "react";
 export const ActivityContext = createContext();
 
 export const ActivityProvider = (props) => {
+
     const [activities, setActivities] = useState([
         {
             description: 'Activity description',
@@ -20,6 +21,7 @@ export const ActivityProvider = (props) => {
             end: '-1'
         },
     ]);
+
 
     return(
         <ActivityContext.Provider value={[activities, setActivities]}>

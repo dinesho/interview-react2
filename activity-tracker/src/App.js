@@ -7,12 +7,13 @@ import ActivityGrid from "./ActivityGrid/ActivityGrid";
 import Header from "./HeaderComponents/Header";
 import Navigation from "./HeaderComponents/Navigation";
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {ActivityProvider} from "./ActivityContext";
 
 function App() {
 
   return (
+
       <ActivityProvider>
       <Router>
             <div className="App">
@@ -26,5 +27,6 @@ function App() {
       </ActivityProvider>
   );
 }
+
 
 export default App;
