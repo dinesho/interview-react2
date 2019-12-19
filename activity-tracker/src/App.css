@@ -56,6 +56,15 @@ button.success
   background:#FF5722;
 }
 
+/*Navigation Section*/
+.navigation button
+{
+  padding: 15px 10px;
+  width: 190px;
+  border-radius: 0px;
+  margin-top: -9px;
+}
+
 /*New Activity Section*/
 .new-activity{
   width: 350px;
