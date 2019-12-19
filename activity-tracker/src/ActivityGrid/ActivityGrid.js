@@ -20,7 +20,7 @@ function ActivityGrid() {
                 </thead>
                 <tbody>
                 {activities.map(activity => (
-                    <tr>
+                    <tr key={activity.start}>
                         <td> {activity.description}</td>
                         <td> {getDateTime(activity.start)}</td>
                         <td> {getDateTime(activity.end)}</td>

@@ -30,7 +30,7 @@ export const getDateTime = function (time) {
     {
         return "In Progress";
     }
-    
+
     let date = new Date(parseInt(time));
     return date.getHours() +":"+date.getMinutes()+":"+date.getSeconds();
 };

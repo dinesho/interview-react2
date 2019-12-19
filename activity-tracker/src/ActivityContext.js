@@ -11,12 +11,12 @@ export const ActivityProvider = (props) => {
         },
         {
             description: 'Activity description 2',
-            start: '1576762333701',
+            start: '1576762333702',
             end: '1576772233701'
         },
         {
             description: 'Activity the active task',
-            start: '1576762333701',
+            start: '1576762333703',
             end: '-1'
         },
     ]);
