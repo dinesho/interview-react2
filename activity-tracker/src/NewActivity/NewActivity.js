@@ -13,6 +13,9 @@ function NewActivity() {
 
     const addActivity = e => {
         e.preventDefault();
+
+
+
         let time = (new Date()).getTime();
         setActivities(prevActivities => [...prevActivities,{description: description, start: time, end: -1}]);
     };
@@ -21,7 +24,7 @@ function NewActivity() {
         <div className="new-activity">
             <form onSubmit={addActivity}>
                 <p>Add description below and click "Start Activity" to clock in</p>
-                <textarea onChange={updateName}> </textarea><br/>
+                <textarea onChange={updateName}  required> </textarea><br/>
                 <button>Start Activity</button>
             </form>
         </div>

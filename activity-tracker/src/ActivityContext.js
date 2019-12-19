@@ -4,23 +4,21 @@ export const ActivityContext = createContext();
 
 export const ActivityProvider = (props) => {
 
-    const [activities, setActivities] = useState([
+    console.log("database update");
+
+    const [activities, setActivities] = useState([]);
+
+    if(activities.length === 0){
+        let activitiesFromDB = JSON.parse(sessionStorage.getItem("ACTIVITIES_DB"));
+
+        if(activitiesFromDB !== null && activitiesFromDB.length > 0){
+            setActivities(activities => activitiesFromDB);
+        }
+    }
+    else
         {
-            description: 'Activity description',
-            start: '1576762233701',
-            end: '1576762253701'
-        },
-        {
-            description: 'Activity description 2',
-            start: '1576762333702',
-            end: '1576772233701'
-        },
-        {
-            description: 'Activity the active task',
-            start: '1576762333703',
-            end: '-1'
-        },
-    ]);
+            sessionStorage.setItem("ACTIVITIES_DB", JSON.stringify(activities));
+        }
 
 
     return(
