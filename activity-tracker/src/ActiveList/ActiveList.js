@@ -46,7 +46,7 @@ function ActiveList() {
             {activities.filter(activity => activity.end < 0).map(activity => (
                 <div className="activity" key={activity.start}>
                     <p>{activity.description}</p>
-                    <p className="time">Time Passed (HH:MM:SS) : {getDuration(activity.start)}</p>
+                    <p className="time">Time Passed - {getDuration(activity.start) } <span className="small">(HH:MM:SS)</span> </p>
                     <button className="success" onClick={()=>endActivity(activity.start)} > <i className="fas fa-hourglass-end"></i> End Activity</button>
                     <span className="clear"></span>
                 </div>

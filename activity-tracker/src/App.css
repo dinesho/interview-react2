@@ -9,6 +9,8 @@ body
   clear: both;
 }
 
+.small{font-size: 10px;     color: #797979;}
+
 /*Header Section Styles*/
 .header h2
 {
