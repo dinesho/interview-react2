@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import NewActivity from "./NewActivity/NewActivity";
@@ -8,16 +7,20 @@ import ActivityGrid from "./ActivityGrid/ActivityGrid";
 import Header from "./HeaderComponents/Header";
 import Navigation from "./HeaderComponents/Navigation";
 
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Navigation/>
-      <NewActivity/>
-      <ActiveList/>
-      <ActivityGrid/>
-    </div>
+      <Router>
+        <div className="App">
+          <Header/>
+          <Navigation/>
+            <Route path="/" exact component={NewActivity} />
+            <Route path="/" exact component={ActiveList} />
+            <Route path="/grid" exact component={ActivityGrid} />
+        </div>
+      </Router>
   );
 }
 
