@@ -11,6 +11,7 @@ function NewActivity() {
         setDescription(e.target.value);
     };
 
+    // Check the description and add the activity to the Activity context
     const addActivity = e => {
         e.preventDefault();
 

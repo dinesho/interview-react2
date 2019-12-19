@@ -6,6 +6,7 @@ export const ActivityProvider = (props) => {
 
     const [activities, setActivities] = useState([]);
 
+    // If the app state is not set, fetch data from session storage if that exist
     if(activities.length === 0){
         let activitiesFromDB = JSON.parse(sessionStorage.getItem("ACTIVITIES_DB"));
 
@@ -13,7 +14,7 @@ export const ActivityProvider = (props) => {
             setActivities(activities => activitiesFromDB);
         }
     }
-    else
+    else // Update the session storage when activity context changed
         {
             sessionStorage.setItem("ACTIVITIES_DB", JSON.stringify(activities));
         }

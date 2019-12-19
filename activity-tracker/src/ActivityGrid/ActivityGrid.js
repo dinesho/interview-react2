@@ -6,6 +6,7 @@ function ActivityGrid() {
 
     const [activities] = useContext(ActivityContext);
 
+    // Show the table of activities if there are activities in the system
     if(activities.length > 0)
     {
         return (
@@ -34,7 +35,7 @@ function ActivityGrid() {
             </div>
         );
     }
-    else
+    else // Display an alert showing no activities
         {
             return (
                 <div className="alert"> <i className="fas fa-folder-open"></i> No activity records were found</div>

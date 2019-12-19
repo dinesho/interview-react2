@@ -1,4 +1,5 @@
-
+// Calculates and returns the duration between two time stamps in
+// Hours : Minutes : Seconds format
 export  const getDuration = function(start,end = -1){
     let duration;
 
@@ -25,6 +26,7 @@ export  const getDuration = function(start,end = -1){
     return hours+" : "+minutes+" : "+seconds;
 };
 
+// Returns the timestamp in Hour:Minute:Second Format
 export const getDateTime = function (time) {
     if(time < 0)
     {

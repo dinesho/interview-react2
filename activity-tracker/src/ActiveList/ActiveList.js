@@ -10,6 +10,7 @@ function ActiveList() {
 
     let activitiesInProgress = 0;
 
+    // Traverse through the json object array and update the activity that has marked ended.
     const endActivity = (id) =>{
         let activitiesCopy = activities;
 
@@ -20,12 +21,15 @@ function ActiveList() {
             }
         }
 
+        // Update the activity context and session storage
         setActivities(activities => activitiesCopy );
         sessionStorage.setItem("ACTIVITIES_DB", JSON.stringify(activities));
 
+        // Redirect to activity grid to show completed activities
         history.push("/grid");
     };
 
+    // Counts activities in progress
     for(let i=0; i<activities.length; i++)
     {
         if(activities[i].end === -1)
@@ -35,8 +39,10 @@ function ActiveList() {
     return (
         <div className="active-list">
 
+            {/*Show title if there are any active activities*/}
             {activitiesInProgress > 0 ? (<h4>Activities In Progress</h4>) : ('')}
 
+            {/*Loop through activities and print active activities*/}
             {activities.filter(activity => activity.end < 0).map(activity => (
                 <div className="activity" key={activity.start}>
                     <p>{activity.description}</p>
