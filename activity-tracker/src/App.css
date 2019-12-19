@@ -109,7 +109,7 @@ button.success
 
 .active-list .activity button{
   float: right;
-  width: 85px;
+  width: 105px;
 }
 
 .active-list .activity button:hover{
@@ -147,4 +147,14 @@ button.success
 {
   text-align: left;
   padding: 15px;
+}
+
+.alert
+{
+  background: #d8a03a30;
+  width: 380px;
+  margin: auto;
+  padding: 32px 0;
+  border-radius: 5px;
+  margin-top: 25px;
 }

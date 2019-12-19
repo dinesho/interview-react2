@@ -14,10 +14,14 @@ function NewActivity() {
     const addActivity = e => {
         e.preventDefault();
 
-
-
-        let time = (new Date()).getTime();
-        setActivities(prevActivities => [...prevActivities,{description: description, start: time, end: -1}]);
+        if(description === '')
+        {
+            alert("Fill out the description");
+        }
+        else{
+            let time = (new Date()).getTime();
+            setActivities(prevActivities => [...prevActivities,{description: description, start: time, end: -1}]);
+        }
     };
 
     return (
@@ -25,7 +29,7 @@ function NewActivity() {
             <form onSubmit={addActivity}>
                 <p>Add description below and click "Start Activity" to clock in</p>
                 <textarea onChange={updateName}  required> </textarea><br/>
-                <button>Start Activity</button>
+                <button><i className="fas fa-hourglass-start"></i> Start Activity</button>
             </form>
         </div>
     );

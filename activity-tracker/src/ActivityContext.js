@@ -4,8 +4,6 @@ export const ActivityContext = createContext();
 
 export const ActivityProvider = (props) => {
 
-    console.log("database update");
-
     const [activities, setActivities] = useState([]);
 
     if(activities.length === 0){
@@ -19,7 +17,6 @@ export const ActivityProvider = (props) => {
         {
             sessionStorage.setItem("ACTIVITIES_DB", JSON.stringify(activities));
         }
-
 
     return(
         <ActivityContext.Provider value={[activities, setActivities]}>
