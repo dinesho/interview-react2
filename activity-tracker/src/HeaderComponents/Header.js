@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ActivityContext} from "../ActivityContext";
 
 function Header() {
+
+    const value = useContext(ActivityContext);
+
     return (
         <div className="header">
             <h2>Activity Tracker</h2>
