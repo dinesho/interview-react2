@@ -3,21 +3,26 @@ import React, {useState, createContext} from "react";
 export const ActivityContext = createContext();
 
 export const ActivityProvider = (props) => {
-    const [activity, setActivity] = useState([
+    const [activities, setActivities] = useState([
         {
             description: 'Activity description',
-            start: '1000',
-            end: '1500'
+            start: '1576762233701',
+            end: '1576762253701'
         },
         {
             description: 'Activity description 2',
-            start: '2000',
-            end: '2500'
+            start: '1576762333701',
+            end: '1576772233701'
+        },
+        {
+            description: 'Activity the active task',
+            start: '1576762333701',
+            end: '-1'
         },
     ]);
 
     return(
-        <ActivityContext.Provider value={'Hello'}>
+        <ActivityContext.Provider value={[activities, setActivities]}>
             {props.children}
         </ActivityContext.Provider>
     );

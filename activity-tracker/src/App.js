@@ -10,8 +10,8 @@ import Navigation from "./HeaderComponents/Navigation";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {ActivityProvider} from "./ActivityContext";
 
-
 function App() {
+
   return (
       <ActivityProvider>
       <Router>

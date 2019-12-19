@@ -1,9 +1,6 @@
 import React, {useContext} from 'react';
-import {ActivityContext} from "../ActivityContext";
 
 function Header() {
-
-    const value = useContext(ActivityContext);
 
     return (
         <div className="header">

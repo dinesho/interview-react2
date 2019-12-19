@@ -40,7 +40,7 @@ button
   border-radius: 3px;
 }
 
-button.active, button:hover
+.active button, button:hover
 {
   background: #0073aa;
   cursor: pointer;

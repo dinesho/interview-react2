@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {ActivityContext} from "../ActivityContext";
+import {getDateTime, getDuration} from "../Util/Util";
 
 function ActivityGrid() {
+
+    const [activities, setActivities] = useContext(ActivityContext);
+
     return (
         <div className="activity-grid">
+            <h4>Activity Grid</h4>
             <table>
                 <thead>
                     <tr>
@@ -13,18 +19,14 @@ function ActivityGrid() {
                     </tr>
                 </thead>
                 <tbody>
+                {activities.map(activity => (
                     <tr>
-                        <td> This is the activity description</td>
-                        <td> 9.55.56</td>
-                        <td> 10.30.56</td>
-                        <td> 00:30:36</td>
+                        <td> {activity.description}</td>
+                        <td> {getDateTime(activity.start)}</td>
+                        <td> {getDateTime(activity.end)}</td>
+                        <td> {getDuration(activity.start, activity.end)}</td>
                     </tr>
-                    <tr>
-                        <td> This is the activity description</td>
-                        <td> 9.55.56</td>
-                        <td> 10.30.56</td>
-                        <td> 00:30:36</td>
-                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>
